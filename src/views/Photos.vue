@@ -1,15 +1,17 @@
 <template>
-  <div>
-     <h1>Photos</h1>
-  </div>
+
+
+<h1>All Photos</h1>
+
+
 </template>
 
 <script>
+
 export default {
-  name: "Photos.vue"
+  name: "Photo.vue",
 }
 </script>
 
-<style scoped>
 
-</style>
+
