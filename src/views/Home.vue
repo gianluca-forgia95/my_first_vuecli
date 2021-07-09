@@ -4,7 +4,8 @@
     <h1>{{ title }}</h1>
     <input type="text" ref="name" />
     <button @click="handleClick">Click</button>
-    <Modal />
+    <Modal header="Sign Up" />
+
   </div>
 </template>
 

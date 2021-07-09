@@ -1,17 +1,17 @@
 <template>
   <div class="backdrop">
      <div class="modal">
-       <h1>Modal Title</h1>
-        <p> modal content</p>
-     </div>
-
+      <h1>{{ header }}</h1>
+       <p> modal content</p>
+    </div>
   </div>
 
 </template>
 
 <script>
 export default {
-  name: "Modal.vue"
+  //name: "Modal.vue"
+  props: ["header"],
 }
 </script>
 
