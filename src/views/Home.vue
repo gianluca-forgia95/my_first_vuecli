@@ -10,14 +10,14 @@
 
 <script>
 // @ is an alias to /src
-//import HelloWorld from "@/components/HelloWorld.vue";
+//import HelloWorld from "/components/HelloWorld.vue";
 import Modal from "./components/Modal.vue";
 
 
 
   export default {
   name: "App",
-    components: {Modal},
+  components: { Modal },
   data() {
     return {
       title: "My First Vue Cli app",
