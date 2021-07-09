@@ -4,8 +4,11 @@
       <div class="cross-modal">
         <i @click.self="closeModal" class="fas fa-times"></i>
       </div>
-      <h1>{{ header }}</h1>
-      <p>{{ text }}</p>
+      <slot></slot>
+      <div class="actions">
+         <slot name="links"></slot>
+      </div>
+
     </div>
   </div>
 </template>
@@ -13,7 +16,7 @@
 <script>
 export default {
   //name: "Modal.vue"
-  props: ["header", "text"],
+  props: [],
   methods: {
     closeModal() {
       this.$emit('close');
@@ -50,6 +53,10 @@ h1 {
 }
 .cross-modal i {
   cursor: pointer;
+}
+
+.actions a {
+  padding: 10px;
 }
 
 </style>
