@@ -2,10 +2,11 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
     <h1>{{ title }}</h1>
-    <input type="text" ref="name" />
-    <button @click="handleClick">Click</button>
-    <Modal header="Sign Up" />
 
+    <div v-if="showModal">
+      <Modal :header="header" :text="text" @close="toggleModal" />
+    </div>
+    <button @click.left="toggleModal">Open Modal</button>
   </div>
 </template>
 
@@ -23,6 +24,9 @@ import Modal from "./components/Modal.vue";
     return {
       title: "My First Vue Cli app",
       list: ["One", "Two", "Three"],
+      header: "Sign Up",
+      text: "Grab your premium account for a 20% discount!!",
+      showModal: false
     };
   },
   methods: {
@@ -31,6 +35,9 @@ import Modal from "./components/Modal.vue";
       this.$refs.name.classList.add("active");
       this.$refs.name.focus();
     },
+    toggleModal() {
+      this.showModal = !this.showModal;
+    }
   },
 };
 </script>

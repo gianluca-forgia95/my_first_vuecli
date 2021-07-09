@@ -1,28 +1,35 @@
 <template>
-  <div class="backdrop">
-     <div class="modal">
+  <div class="backdrop" >
+    <div class="modal">
+      <div class="cross-modal">
+        <i @click.self="closeModal" class="fas fa-times"></i>
+      </div>
       <h1>{{ header }}</h1>
-       <p> modal content</p>
+      <p>{{ text }}</p>
     </div>
   </div>
-
 </template>
 
 <script>
 export default {
   //name: "Modal.vue"
-  props: ["header"],
-}
+  props: ["header", "text"],
+  methods: {
+    closeModal() {
+      this.$emit('close');
+    }
+  }
+};
 </script>
 
 <style scoped>
-
 .modal {
   width: 300px;
   padding: 20px;
   background: antiquewhite;
-  margin: 0 auto;
+  margin: 100px auto;
   border-radius: 18px;
+  position: relative;
 }
 
 .backdrop {
@@ -34,6 +41,15 @@ export default {
 }
 h1 {
   color: #2c3e50;
+}
+
+.cross-modal {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.cross-modal i {
+  cursor: pointer;
 }
 
 </style>
