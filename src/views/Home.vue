@@ -13,7 +13,16 @@
         <p>Grab your premium account for a 20% discount!!</p>
       </Modal>
     </div>
+
+    <div v-if="showModalTwo">
+      <Modal  @close="toggleModalTwo" >
+
+        <h1>Sign Up for latest new!</h1>
+        <p>Update promo codes!!</p>
+      </Modal>
+    </div>
     <button @click.left="toggleModal">Open Modal</button>
+    <button @click.left="toggleModalTwo">News Modal</button>
   </div>
 </template>
 
@@ -33,18 +42,22 @@ import Modal from "./components/Modal.vue";
       list: ["One", "Two", "Three"],
       header: "Sign Up",
       text: "Grab your premium account for a 20% discount!!",
-      showModal: false
+      showModal: false,
+      showModalTwo: false
     };
   },
   methods: {
     handleClick() {
       console.log(this.$refs);
-      this.$refs.name.classList.add("active");
-      this.$refs.name.focus();
+      //this.$refs.name.classList.add("active");
+      //this.$refs.name.focus();
     },
     toggleModal() {
       this.showModal = !this.showModal;
-    }
+    },
+    toggleModalTwo() {
+      this.showModalTwo = !this.showModalTwo;
+    },
   },
 };
 </script>

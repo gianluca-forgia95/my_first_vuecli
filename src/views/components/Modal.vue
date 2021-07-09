@@ -9,17 +9,23 @@
          <slot name="links"></slot>
       </div>
 
+
     </div>
   </div>
 </template>
 
 <script>
+
 export default {
   //name: "Modal.vue"
   props: [],
   methods: {
     closeModal() {
       this.$emit('close');
+    },
+    toggleModalTwo() {
+      this.showModalTwo = !this.showModalTwo;
+
     }
   }
 };
@@ -57,6 +63,8 @@ h1 {
 
 .actions a {
   padding: 10px;
+  color: #333;
+  text-decoration: none;
 }
 
 </style>
